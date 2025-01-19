@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Include sidebar -->
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header" data-aos="fade-up">
+            <h1>Technology Stack</h1>
+            <p class="roadmap-intro">Advanced blockchain infrastructure for the next generation of decentralized applications</p>
+        </div>
+
+        <section class="technology-content"></section>
+            <section class="tech-overview" data-aos="fade-up">
+                <div class="tech-intro">
+                    <div class="highlight-grid">
+                        <div class="highlight-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" width="48" height="48">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" 
+                                        stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3>Core Technologies</h3>
+                            <ul></ul>
+                                <li>Modified Go-Ethereum client</li>
+                                <li>Custom consensus engine</li>
+                                <li>Advanced state management</li>
+                                <li>WebAssembly support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="specs-section" data-aos="fade-up">
+                    <h2>Blockchain Specifications</h2>
+                    <div class="specs-grid">
+                        <div class="spec-card">
+                            <h3>Consensus Algorithm</h3>
+                            <div class="pow-diagram">
+                                <svg viewBox="0 0 800 400" class="pow-flow">
+                                    <!-- Mining Node -->
+                                    <g class="mining-node" transform="translate(50,50)">
+                                        <rect width="200" height="80" rx="8" fill="#4299e1" opacity="0.1"/>
+                                        <text x="100" y="45" text-anchor="middle" fill="#2a4365">Mining Node</text>
+                                    </g>
+
+                                    <!-- Block Creation -->
+                                    <g class="block-creation" transform="translate(300,50)">
+                                        <rect width="200" height="80" rx="8" fill="#48bb78" opacity="0.1"/>
+                                        <text x="100" y="45" text-anchor="middle" fill="#2a4365">Block Creation</text>
+                                    </g>
+
+                                    <!-- Validation -->
+                                    <g class="validation" transform="translate(550,50)">
+                                        <rect width="200" height="80" rx="8" fill="#ed8936" opacity="0.1"/>
+                                        <text x="100" y="45" text-anchor="middle" fill="#2a4365">Validation</text>
+                                    </g>
+
+                                    <!-- Network Distribution -->
+                                    <g class="distribution" transform="translate(300,200)">
+                                        <rect width="200" height="80" rx="8" fill="#9f7aea" opacity="0.1"/>
+                                        <text x="100" y="45" text-anchor="middle" fill="#2a4365">Network Distribution</text>
+                                    </g>
+
+                                    <!-- Consensus Arrows -->
+                                    <g class="arrows" stroke="#2a4365" stroke-width="2" fill="none">
+                                        <path d="M250,90 L300,90" marker-end="url(#arrowhead)"/>
+                                        <path d="M500,90 L550,90" marker-end="url(#arrowhead)"/>
+                                        <path d="M400,130 L400,200" marker-end="url(#arrowhead)"/>
+                                    </g>
+
+                                    <!-- Arrow Marker -->
+                                    <defs>
+                                        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                            refX="9" refY="3.5" orient="auto">
+                                            <polygon points="0 0, 10 3.5, 0 7" fill="#2a4365"/>
+                                        </marker>
+                                    </defs>
+                                </svg>
+                                <p class="diagram-caption">Proof of Work Flow Diagram</p>
+                            </div>
+                        </div>
+
+                        <div class="spec-card">
+                            <h3>Smart Contract Platform</h3>
+                            <div class="spec-content">
+                                <h4>EVM Compatibility Features</h4>
+                                <ul>
+                                    <li>Full Solidity support (v0.8.0+)</li>
+                                    <li>Extended opcodes for optimization</li>
+                                    <li>Built-in contract verification</li>
+                                    <li>Gas optimization mechanisms</li>
+                                </ul>
+                                <div class="code-example">
+                                    <pre><code>
+// Example of optimized smart contract deployment
+pragma solidity ^0.8.0;
+
+contract OptimizedExample {
+    // Global Network specific optimizations
+    uint256 constant CHAIN_ID = 1013;
+    uint256 constant MAX_GAS = 8000000;
+    
+    // Custom gas-efficient storage
+    mapping(address => uint256) private _balances;
+}
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interoperability-section">
+                        <h2>Cross-Chain Interoperability</h2>
+                        <div class="bridge-architecture">
+                            <h3>Bridge Protocol</h3>
+                            <p>Our custom bridge protocol enables seamless asset transfer between Global Network and other major blockchains:</p>
+                            <ul>
+                                <li>Ethereum Mainnet</li>
+                                <li>Binance Smart Chain</li>
+                                <li>Polygon</li>
+                                <li>Avalanche</li>
+                            </ul>
+                            <canvas id="bridgeMetricsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="security-features">
+                <h2>Security Architecture</h2>
+                <div class="security-grid">
+                    <div class="security-card">
+                        <h3>Network Security</h3>
+                        <ul>
+                            <li>Multi-layer DDoS protection</li>
+                            <li>Real-time threat monitoring</li>
+                            <li>Automated vulnerability scanning</li>
+                            <li>Smart contract audit system</li>
+                        </ul>
+                    </div>
+                    <div class="security-metrics">
+                        <canvas id="securityMetricsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Load sidebar
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
+    </script>
+    <script src="js/technology.js"></script>
+</body>
+</html>

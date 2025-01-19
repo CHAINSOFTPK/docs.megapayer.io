@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Contracts - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header has-pattern" data-aos="fade-up">
+            <div class="header-pattern"></div>
+            <h1>Smart Contracts</h1>
+            <p class="roadmap-intro">Build and deploy secure smart contracts on Global Network</p>
+            <div class="header-stats">
+                <div class="header-stat">
+                    <span class="stat-value">4.2M+</span>
+                    <span class="stat-label">Contracts Deployed</span>
+                </div>
+                <div class="header-stat">
+                    <span class="stat-value">$0.001</span>
+                    <span class="stat-label">Avg Deploy Cost</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="smart-contracts-content">
+            <nav class="contract-nav" data-aos="fade-down">
+                <a href="#setup" class="nav-item active">Setup</a>
+                <a href="#erc20" class="nav-item">ERC-20</a>
+                <a href="#erc721" class="nav-item">ERC-721</a>
+                <a href="#deploy" class="nav-item">Deployment</a>
+                <a href="#verify" class="nav-item">Verification</a>
+            </nav>
+
+            <section id="setup" class="setup-guide card-section" data-aos="fade-up">
+                <h2>Quick Setup with Hardhat</h2>
+                <div class="code-example">
+                    <pre><code>
+# Create a new hardhat project
+mkdir my-contract
+cd my-contract
+npm init -y
+npm install --save-dev hardhat
+
+# Initialize hardhat
+npx hardhat init
+
+# Install dependencies
+npm install --save-dev @openzeppelin/contracts dotenv @nomiclabs/hardhat-ethers
+
+# Configure hardhat.config.js
+# Add Global Network configuration:
+require("@nomiclabs/hardhat-waffle");
+require('dotenv').config();
+
+module.exports = {
+  networks: {
+    globalnet: {
+      url: "https://evm.globalnetwork.foundation/",
+      accounts: [process.env.PRIVATE_KEY]
+    }
+  },
+  solidity: "0.8.20"
+};
+                    </code></pre>
+                </div>
+            </section>
+
+            <section id="erc20" class="contract-sample" data-aos="fade-up">
+                <h3>ERC-20 Token Contract</h3>
+                <div class="code-example">
+                    <pre><code>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract GlobalToken is ERC20, Ownable {
+    constructor(address initialOwner) 
+        ERC20("Global Network Token", "GNT") 
+        Ownable(initialOwner)
+    {
+        _mint(msg.sender, 1000000000 * 10 ** decimals());
+    }
+
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+}
+                        </code></pre>
+                </div>
+            </section>
+
+            <section id="erc721" class="contract-sample" data-aos="fade-up">
+                <h3>ERC-721 NFT Contract</h3>
+                <div class="code-example">
+                    <pre><code>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract GlobalNFT is ERC721URIStorage, Ownable {
+    uint256 private _nextTokenId;
+
+    constructor(address initialOwner)
+        ERC721("Global Network NFT", "GNFT")
+        Ownable(initialOwner)
+    {}
+
+    function safeMint(address to, string memory uri) public onlyOwner {
+        uint256 tokenId = _nextTokenId++;
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, uri);
+    }
+}
+                        </code></pre>
+                </div>
+            </section>
+
+            <section id="deploy" class="deployment-guide" data-aos="fade-up">
+                <h3>Deployment Instructions</h3>
+                <div class="code-example">
+                    <pre><code>
+# Create deployment script in scripts/deploy.js:
+async function main() {
+    const [deployer] = await ethers.getSigners();
+    console.log("Deploying contracts with account:", deployer.address);
+
+    const Token = await ethers.getContractFactory("GlobalToken");
+    const token = await Token.deploy(deployer.address);
+    await token.deployed();
+    
+    console.log("Token deployed to:", token.address);
+}
+
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
+
+# Deploy to Global Network:
+npx hardhat run scripts/deploy.js --network globalnet
+                        </code></pre>
+                </div>
+            </section>
+
+            <section id="verify" class="verification-guide" data-aos="fade-up">
+                <h2>Contract Verification</h2>
+                <div class="code-example">
+                    <pre><code>
+# Install hardhat-etherscan plugin
+npm install --save-dev @nomiclabs/hardhat-etherscan
+
+# Add to hardhat.config.js:
+require("@nomiclabs/hardhat-etherscan");
+
+module.exports = {
+    etherscan: {
+        apiKey: {
+            globalnet: "your-api-key" // If explorer requires API key
+        },
+        customChains: [{
+            network: "globalnet",
+            chainId: 1013,
+            urls: {
+                apiURL: "https://explorer.globalnetwork.foundation/api",
+                browserURL: "https://explorer.globalnetwork.foundation"
+            }
+        }]
+    }
+}
+
+# Verify contract:
+npx hardhat verify --network globalnet DEPLOYED_CONTRACT_ADDRESS CONSTRUCTOR_ARGUMENTS
+                    </code></pre>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        // Load sidebar
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+        
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('section[id]');
+
+            // Handle click events
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = item.getAttribute('href').slice(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    // Smooth scroll to section
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Update active state
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+                });
+            });
+
+            // Update active state on scroll
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').slice(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

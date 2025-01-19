@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consensus Mechanism - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header" data-aos="fade-up">
+            <h1>Consensus Mechanism</h1>
+            <p class="roadmap-intro">An enhanced Proof of Work mechanism optimized for efficiency and security</p>
+        </div>
+
+        <section class="consensus-overview" data-aos="fade-up">
+            <div class="consensus-grid">
+                <div class="consensus-card">
+                    <h2>Enhanced PoW</h2>
+                    <div class="consensus-diagram">
+                        <svg viewBox="0 0 800 400" class="mechanism-diagram">
+                            <!-- Mining Process -->
+                            <g class="mining-process">
+                                <!-- Miner Node -->
+                                <circle cx="150" cy="200" r="40" fill="#4299e1" opacity="0.2"/>
+                                <text x="150" y="205" text-anchor="middle" fill="#2a4365">Miner</text>
+                                
+                                <!-- Block Creation -->
+                                <rect x="300" y="170" width="120" height="60" rx="8" fill="#48bb78" opacity="0.2"/>
+                                <text x="360" y="205" text-anchor="middle" fill="#2a4365">Block</text>
+                                
+                                <!-- Validation -->
+                                <circle cx="600" cy="200" r="40" fill="#ed8936" opacity="0.2"/>
+                                <text x="600" y="205" text-anchor="middle" fill="#2a4365">Network</text>
+                                
+                                <!-- Arrows -->
+                                <path d="M200,200 L290,200" stroke="#2a4365" stroke-width="2" marker-end="url(#arrow)"/>
+                                <path d="M430,200 L550,200" stroke="#2a4365" stroke-width="2" marker-end="url(#arrow)"/>
+                                
+                                <defs>
+                                    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" 
+                                        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a4365"/>
+                                    </marker>
+                                </defs>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="metrics-card" data-aos="fade-up">
+                    <h3>Performance Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-value">3s</span>
+                            <span class="metric-label">Block Time</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">4000+</span>
+                            <span class="metric-label">TPS</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Energy Saving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-list" data-aos="fade-up">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Dynamic difficulty adjustment</li>
+                        <li>Memory-hard algorithm</li>
+                        <li>ASIC resistance</li>
+                        <li>Energy efficiency optimizations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-details" data-aos="fade-up">
+            <h2>Technical Specifications</h2>
+            <div class="specs-table">
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Block Time</td>
+                        <td>3 seconds</td>
+                        <td>Target time between blocks</td>
+                    </tr>
+                    <tr>
+                        <td>Difficulty Adjustment</td>
+                        <td>2048 blocks</td>
+                        <td>Frequency of difficulty updates</td>
+                    </tr>
+                    <tr>
+                        <td>Block Reward</td>
+                        <td>2 GNF</td>
+                        <td>Reward per block with halving every 2 years</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

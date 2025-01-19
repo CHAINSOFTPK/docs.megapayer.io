@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Distribution - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header" data-aos="fade-up">
+            <h1>Token Distribution</h1>
+            <p class="roadmap-intro">Fair and transparent allocation of GNF tokens</p>
+        </div>
+
+        <div class="distribution-content">
+            <div class="token-metrics" data-aos="fade-up">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Total Supply</h3>
+                        <div class="metric-value">1,000,000,000</div>
+                        <div class="metric-label">GNF</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Circulating Supply</h3>
+                        <div class="metric-value">245,789,023</div>
+                        <div class="metric-label">GNF</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Market Cap</h3>
+                        <div class="metric-value">$24.5M</div>
+                        <div class="metric-trend">+5.2%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="distribution-overview" data-aos="fade-up">
+                <div class="chart-section">
+                    <canvas id="distributionChart"></canvas>
+                </div>
+
+                <div class="allocation-details" data-aos="fade-up">
+                    <div class="allocation-grid">
+                        <div class="allocation-card">
+                            <div class="allocation-value">30%</div>
+                            <h3>Ecosystem Growth</h3>
+                            <p>Community development and ecosystem initiatives</p>
+                            <div class="unlock-details">
+                                <span class="unlock-label">Unlock Schedule:</span>
+                                <span class="unlock-value">10% initial, 15% quarterly</span>
+                            </div>
+                        </div>
+
+                        <div class="allocation-card">
+                            <div class="allocation-value">25%</div>
+                            <h3>Development Fund</h3>
+                            <p>Technical development and infrastructure</p>
+                            <div class="unlock-details">
+                                <span class="unlock-label">Unlock Schedule:</span>
+                                <span class="unlock-value">2-year linear vesting</span>
+                            </div>
+                        </div>
+
+                        <div class="allocation-card">
+                            <div class="allocation-value">20%</div>
+                            <h3>Public Sale</h3>
+                            <p>Initial token offering and liquidity</p>
+                            <div class="unlock-details">
+                                <span class="unlock-label">Unlock Schedule:</span>
+                                <span class="unlock-value">25% initial, 25% monthly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="allocation-timeline" data-aos="fade-up">
+                <h2>Token Release Schedule</h2>
+                <div class="timeline-cards">
+                    <div class="timeline-card">
+                        <div class="timeline-date">Q1 2024</div>
+                        <div class="timeline-content">
+                            <h3>Initial Release</h3>
+                            <p>10% of total supply unlocked</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more timeline cards -->
+                </div>
+            </div>
+
+            <section class="vesting-timeline" data-aos="fade-up">
+                <h2>Vesting Schedule</h2>
+                <div class="timeline-chart">
+                    <canvas id="vestingChart"></canvas>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/distribution.js"></script>
+    <script>
+        // Load sidebar
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+        
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

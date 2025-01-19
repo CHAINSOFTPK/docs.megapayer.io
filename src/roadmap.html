@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Include sidebar -->
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="roadmap-header" data-aos="fade-up">
+            <h1>Development Roadmap</h1>
+            <p class="roadmap-intro">Our journey to revolutionize blockchain technology</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-phase">
+                <h2>Phase 1: Foundation (Q1-Q2 2024)</h2>
+                <div class="milestone-grid">
+                    <div class="milestone completed">
+                        <h3>Core Network Launch</h3>
+                        <ul>
+                            <li>Mainnet deployment</li>
+                            <li>Initial validator nodes setup</li>
+                            <li>Basic block explorer</li>
+                            <li>Wallet integration</li>
+                        </ul>
+                    </div>
+                    <div class="milestone active">
+                        <h3>Smart Contract Infrastructure</h3>
+                        <ul>
+                            <li>EVM compatibility layer</li>
+                            <li>Smart contract deployment tools</li>
+                            <li>Development framework</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-phase">
+                <h2>Phase 2: Expansion (Q3-Q4 2024)</h2>
+                <div class="milestone-grid">
+                    <div class="milestone">
+                        <h3>Cross-Chain Integration</h3>
+                        <ul>
+                            <li>Bridge to Ethereum</li>
+                            <li>Cross-chain asset transfers</li>
+                            <li>Multi-chain smart contracts</li>
+                        </ul>
+                    </div>
+                    <div class="milestone">
+                        <h3>DeFi Infrastructure</h3>
+                        <ul>
+                            <li>DEX protocol</li>
+                            <li>Lending protocols</li>
+                            <li>Yield optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-phase future">
+                <h2>Phase 3: Innovation (2025)</h2>
+                <div class="milestone-grid">
+                    <div class="milestone">
+                        <h3>Layer 2 Solutions</h3>
+                        <ul>
+                            <li>Rollup implementation</li>
+                            <li>Sharding research</li>
+                            <li>State channels</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="development-metrics" data-aos="fade-up">
+            <h2>Development Progress</h2>
+            <div class="progress-stats">
+                <div class="stat-card">
+                    <h3>Overall Progress</h3>
+                    <div class="progress-circle" style="--progress: 65%">
+                        <span class="progress-text">65%</span>
+                    </div>
+                    <p>Phase 1 near completion</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Milestones</h3>
+                    <div class="milestone-count">
+                        <span>4</span>/<span class="total">10</span>
+                    </div>
+                    <p>Completed milestones</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Next Release</h3>
+                    <div class="release-info">
+                        <span class="release-version">v1.2.0</span>
+                        <span class="release-date">Expected: Q2 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container" style="margin-top: 2rem;">
+                <canvas id="developmentChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/roadmap.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

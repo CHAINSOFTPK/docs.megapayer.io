@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Resources - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header" data-aos="fade-up">
+            <h1>Developer Resources</h1>
+            <p class="roadmap-intro">Build the future of decentralized applications</p>
+        </div>
+
+        <div class="developer-content">
+            <section class="quick-start" data-aos="fade-up">
+                <h2>Quick Start</h2>
+                <div class="code-example">
+                    <pre><code>
+# Install Global Network CLI
+npm install -g @globalnetwork/cli
+
+# Create new project
+gn create my-dapp
+
+# Configure network
+gn network --chain-id 1013 --rpc https://evm.globalnetwork.foundation/
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="tools-section" data-aos="fade-up">
+                <h2>Development Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>SDK</h3>
+                        <p>Comprehensive development kit for building dApps</p>
+                        <a href="#" class="tool-link">Documentation →</a>
+                    </div>
+                    <div class="tool-card">
+                        <h3>CLI Tools</h3>
+                        <p>Command line interface for network interaction</p>
+                        <a href="#" class="tool-link">Learn More →</a>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Smart Contract Templates</h3>
+                        <p>Pre-built contract templates for quick development</p>
+                        <a href="#" class="tool-link">Browse Templates →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="api-section" data-aos="fade-up">
+                <h2>API Reference</h2>
+                <div class="endpoints-table">
+                    <table class="endpoint-table">
+                        <tr>
+                            <th>Endpoint</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>RPC: https://evm.globalnetwork.foundation/</td>
+                            <td>Main network RPC endpoint</td>
+                        </tr>
+                        <tr>
+                            <td>WSS: wss://evm.globalnetwork.foundation/</td>
+                            <td>WebSocket endpoint</td>
+                        </tr>
+                        <tr>
+                            <td>API: https://evm.globalnetwork.foundation/</td>
+                            <td>REST API endpoint</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        // Load sidebar
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+        
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

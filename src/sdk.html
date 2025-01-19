@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDK & Tools - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header has-pattern" data-aos="fade-up">
+            <div class="header-pattern"></div>
+            <h1>SDK & Development Tools</h1>
+            <p class="roadmap-intro">Comprehensive toolkit for blockchain development</p>
+        </div>
+
+        <div class="sdk-content">
+            <nav class="sdk-nav" data-aos="fade-up">
+                <a href="#getting-started" class="nav-item active">Getting Started</a>
+                <a href="#web3" class="nav-item">Web3 Integration</a>
+                <a href="#cli" class="nav-item">CLI Tools</a>
+                <a href="#libraries" class="nav-item">Libraries</a>
+            </nav>
+
+            <section id="getting-started" class="sdk-section card-section" data-aos="fade-up">
+                <h2>Quick Start</h2>
+                <div class="installation-cards">
+                    <div class="install-card" data-aos="fade-up">
+                        <h3>Web3.js Integration</h3>
+                        <div class="code-example">
+                            <pre><code>
+npm install @globalnetwork/web3
+                            </code></pre>
+                        </div>
+                        <div class="usage-example">
+                            <pre><code>
+import { GlobalNetwork } from '@globalnetwork/web3';
+
+const gn = new GlobalNetwork('https://evm.globalnetwork.foundation/');
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="install-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>ethers.js Integration</h3>
+                        <div class="code-example">
+                            <pre><code>
+const provider = new ethers.providers.JsonRpcProvider(
+    'https://evm.globalnetwork.foundation/'
+);
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="web3" class="sdk-section card-section" data-aos="fade-up">
+                <h2>Web3 Integration</h2>
+                <div class="sdk-examples">
+                    <div class="example-card">
+                        <h3>Basic Transaction</h3>
+                        <div class="code-example">
+                            <pre><code>
+const provider = new ethers.providers.JsonRpcProvider('https://evm.globalnetwork.foundation/');
+const wallet = new ethers.Wallet(privateKey, provider);
+
+const tx = await wallet.sendTransaction({
+    to: "0x...",
+    value: ethers.utils.parseEther("1.0")
+});
+
+await tx.wait();
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>Smart Contract Interaction</h3>
+                        <div class="code-example">
+                            <pre><code>
+const contract = new ethers.Contract(address, abi, wallet);
+const result = await contract.someMethod();
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cli" class="sdk-section card-section" data-aos="fade-up">
+                <h2>CLI Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">⌨️</div>
+                        <h3>Account Management</h3>
+                        <div class="code-example">
+                            <pre><code>gn account create
+gn account list
+gn account import</code></pre>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📦</div>
+                        <h3>Contract Tools</h3>
+                        <div class="code-example">
+                            <pre><code>gn contract deploy
+gn contract verify
+gn contract call</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="libraries" class="sdk-section card-section" data-aos="fade-up">
+                <h2>Libraries & SDKs</h2>
+                <div class="libraries-grid">
+                    <div class="library-card">
+                        <h3>JavaScript SDK</h3>
+                        <p>Complete toolkit for JavaScript/TypeScript developers</p>
+                        <a href="#" class="library-btn">View Docs</a>
+                    </div>
+                    <div class="library-card">
+                        <h3>Python SDK</h3>
+                        <p>Python library for blockchain interaction</p>
+                        <a href="#" class="library-btn">View Docs</a>
+                    </div>
+                    <div class="library-card">
+                        <h3>Go SDK</h3>
+                        <p>High-performance Go implementation</p>
+                        <a href="#" class="library-btn">View Docs</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        // Load sidebar
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+        
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Add scroll navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.sdk-nav .nav-item');
+            const sections = document.querySelectorAll('.sdk-section');
+
+            // Handle click events
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = item.getAttribute('href').slice(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    // Smooth scroll to section
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Update active state
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+                });
+            });
+
+            // Update active state on scroll
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').slice(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

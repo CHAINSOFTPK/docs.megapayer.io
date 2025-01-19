@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenomics - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Include sidebar -->
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header" data-aos="fade-up">
+            <h1>Tokenomics</h1>
+            <p class="lead">Global Network Token (GNF) Distribution & Economics</p>
+        </div>
+
+        <section class="tokenomics-content">
+            <div class="token-overview" data-aos="fade-up">
+                <div class="token-stats-grid">
+                    <div class="token-stat-card">
+                        <h3>Total Supply</h3>
+                        <div class="stat-value">1,000,000,000</div>
+                        <div class="stat-label">GNF</div>
+                    </div>
+                    <div class="token-stat-card">
+                        <h3>Initial Circulating Supply</h3>
+                        <div class="stat-value">100,000,000</div>
+                        <div class="stat-label">GNF</div>
+                    </div>
+                    <div class="token-stat-card">
+                        <h3>Initial Market Cap</h3>
+                        <div class="stat-value">$10,000,000</div>
+                        <div class="stat-label">USD</div>
+                    </div>
+                </div>
+
+                <div class="distribution-section" data-aos="fade-up">
+                    <h2>Token Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="allocation-grid" data-aos="fade-up">
+                    <div class="allocation-card">
+                        <h3>Public Sale</h3>
+                        <div class="allocation-value">10%</div>
+                        <p>Initial token offering and liquidity pools</p>
+                    </div>
+                    <div class="allocation-card">
+                        <h3>Team & Advisors</h3>
+                        <div class="allocation-value">15%</div>
+                        <p>24-month vesting with 6-month cliff</p>
+                    </div>
+                    <div class="allocation-card">
+                        <h3>Development Fund</h3>
+                        <div class="allocation-value">25%</div>
+                        <p>Platform development and technical infrastructure</p>
+                    </div>
+                    <div class="allocation-card">
+                        <h3>Ecosystem Growth</h3>
+                        <div class="allocation-value">30%</div>
+                        <p>Community incentives and ecosystem development</p>
+                    </div>
+                </div>
+
+                <div class="vesting-schedule" data-aos="fade-up">
+                    <h2>Vesting Schedule</h2>
+                    <div class="schedule-chart-container">
+                        <canvas id="vestingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/tokenomics.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalability - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <div class="page-header" data-aos="fade-up">
+            <h1>Scalability Solutions</h1>
+            <p class="roadmap-intro">Advanced scaling technologies for unlimited growth potential</p>
+        </div>
+
+        <section class="scaling-overview" data-aos="fade-up">
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h2>Layer 1 Scaling</h2>
+                    <div class="scaling-diagram">
+                        <svg viewBox="0 0 800 300" class="layer1-diagram">
+                            <!-- Base Layer -->
+                            <rect x="100" y="200" width="600" height="60" rx="4" fill="#4299e1" opacity="0.2"/>
+                            <text x="400" y="235" text-anchor="middle" fill="#2a4365">Base Layer</text>
+                            
+                            <!-- Optimization Arrows -->
+                            <g class="optimizations">
+                                <path d="M400,190 L400,150" stroke="#2a4365" stroke-width="2" marker-end="url(#arrow)"/>
+                                <text x="420" y="170" fill="#2a4365">Optimizations</text>
+                            </g>
+                            
+                            <!-- Performance Metrics -->
+                            <g class="metrics">
+                                <circle cx="300" cy="100" r="30" fill="#48bb78" opacity="0.2"/>
+                                <text x="300" y="105" text-anchor="middle" fill="#2a4365">4000 TPS</text>
+                                
+                                <circle cx="500" cy="100" r="30" fill="#ed8936" opacity="0.2"/>
+                                <text x="500" y="105" text-anchor="middle" fill="#2a4365">3s Block</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="solution-card" data-aos="fade-up">
+                    <h2>Layer 2 Solutions</h2>
+                    <ul class="feature-list">
+                        <li>State Channels</li>
+                        <li>Sidechains</li>
+                        <li>Rollups</li>
+                        <li>Plasma Chains</li>
+                    </ul>
+                </div>
+
+                <div class="metrics-container" data-aos="fade-up">
+                    <h2>Performance Analysis</h2>
+                    <canvas id="scalabilityChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="future-scaling" data-aos="fade-up">
+            <h2>Future Scaling Solutions</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-item">
+                    <h3>Sharding</h3>
+                    <p>Horizontal scaling through database partitioning</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3>Cross-Chain</h3>
+                    <p>Interoperable scaling through multi-chain architecture</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3>ZK-Rollups</h3>
+                    <p>Zero-knowledge proof based scaling solution</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/scalability.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

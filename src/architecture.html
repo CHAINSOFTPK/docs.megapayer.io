@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture - Global Network Blockchain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Include sidebar -->
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <section class="architecture-content">
+            <div class="page-header" data-aos="fade-up">
+                <h1>Technical Architecture</h1>
+                <p class="roadmap-intro">A comprehensive overview of Global Network's innovative blockchain infrastructure</p>
+            </div>
+            
+            <div class="architecture-overview" data-aos="fade-up">
+                <h2>System Overview</h2>
+                <p class="lead">Global Network implements a multi-layered architecture designed for maximum scalability, security, and interoperability.</p>
+                
+                <div class="diagram-container">
+                    <svg class="architecture-diagram" viewBox="0 0 800 400">
+                        <!-- Layer 4 - Application -->
+                        <g class="diagram-layer" transform="translate(0,0)">
+                            <rect x="100" y="20" width="600" height="60" rx="4" fill="#4299e1" opacity="0.1"/>
+                            <text x="400" y="55" text-anchor="middle" fill="#2a4365">Application Layer</text>
+                            <text x="400" y="70" text-anchor="middle" font-size="12" fill="#4a5568">DApps | Wallets | Tools</text>
+                        </g>
+                        
+                        <!-- Layer 3 - Execution -->
+                        <rect x="100" y="100" width="600" height="80" rx="4" fill="#48bb78" opacity="0.1"/>
+                        <text x="400" y="135" text-anchor="middle" fill="#2a4365">Execution Layer (EVM)</text>
+                        <text x="400" y="155" text-anchor="middle" font-size="12" fill="#4a5568">Smart Contracts | State Management</text>
+                        
+                        <!-- Layer 2 - Consensus -->
+                        <rect x="100" y="200" width="600" height="80" rx="4" fill="#ed8936" opacity="0.1"/>
+                        <text x="400" y="235" text-anchor="middle" fill="#2a4365">Consensus Layer</text>
+                        <text x="400" y="255" text-anchor="middle" font-size="12" fill="#4a5568">PoW | Block Validation</text>
+                        
+                        <!-- Layer 1 - Network -->
+                        <rect x="100" y="300" width="600" height="80" rx="4" fill="#9f7aea" opacity="0.1"/>
+                        <text x="400" y="335" text-anchor="middle" fill="#2a4365">Network Layer</text>
+                        <text x="400" y="355" text-anchor="middle" font-size="12" fill="#4a5568">P2P Communication | Node Discovery</text>
+                        
+                        <!-- Connecting Lines -->
+                        <path d="M400,80 L400,100" stroke="#2a4365" stroke-width="2" stroke-dasharray="4"/>
+                        <path d="M400,180 L400,200" stroke="#2a4365" stroke-width="2" stroke-dasharray="4"/>
+                        <path d="M400,280 L400,300" stroke="#2a4365" stroke-width="2" stroke-dasharray="4"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="layer-details" data-aos="fade-up">
+                <h2>Core Components</h2>
+                
+                <div class="layer-grid">
+                    <!-- Consensus Layer Card -->
+                    <div class="layer-card" data-aos="fade-up">
+                        <div class="layer-header">
+                            <svg class="layer-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <h3>Consensus Layer</h3>
+                        </div>
+                        <div class="layer-content"></div>
+                            <h4>Proof of Work Implementation</h4>
+                            <p>Our PoW mechanism utilizes an enhanced version of Ethash, optimized for energy efficiency while maintaining security. Key features include:</p>
+                            <ul>
+                                <li>Dynamic difficulty adjustment every 2048 blocks</li>
+                                <li>Memory-hard algorithm resistant to ASIC mining</li>
+                                <li>Block reward: 2 GNF with halving every 2 years</li>
+                                <li>Target block time: 3 seconds with ±0.1s variance</li>
+                            </ul>
+                            
+                            <div class="technical-diagram">
+                                <svg viewBox="0 0 800 200" class="consensus-diagram">
+                                    <!-- Block Chain -->
+                                    <g transform="translate(50,50)">
+                                        <rect x="0" y="0" width="100" height="60" rx="4" fill="#4299e1" opacity="0.2"/>
+                                        <text x="50" y="35" text-anchor="middle" fill="#2a4365">Block N-1</text>
+                                        
+                                        <rect x="150" y="0" width="100" height="60" rx="4" fill="#4299e1" opacity="0.2"/>
+                                        <text x="200" y="35" text-anchor="middle" fill="#2a4365">Block N</text>
+                                        
+                                        <rect x="300" y="0" width="100" height="60" rx="4" fill="#4299e1" opacity="0.2"/>
+                                        <text x="350" y="35" text-anchor="middle" fill="#2a4365">Block N+1</text>
+                                        
+                                        <!-- Connecting Arrows -->
+                                        <path d="M110,30 L140,30" stroke="#2a4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                        <path d="M260,30 L290,30" stroke="#2a4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                    </g>
+                                    
+                                    <!-- Arrow Marker Definition -->
+                                    <defs>
+                                        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                            refX="9" refY="3.5" orient="auto">
+                                            <polygon points="0 0, 10 3.5, 0 7" fill="#2a4365"/>
+                                        </marker>
+                                    </defs>
+                                </svg>
+                                <p class="diagram-caption">Figure 2: Consensus Mechanism Flow</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVM Layer Card -->
+                    <div class="layer-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="layer-header">
+                            <svg class="layer-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 8h8M8 12h8M8 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <h3>EVM Layer</h3>
+                        </div>
+                        <div class="layer-content">
+                            <h4>Enhanced EVM Compatibility</h4>
+                            <p>Our EVM implementation extends the standard Ethereum Virtual Machine with additional optimizations:</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h5>Parallel Transaction Processing</h5>
+                                    <p>Multiple transactions can be executed simultaneously when they don't share state dependencies.</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Smart Contract Optimization</h5>
+                                    <p>Pre-compilation of frequently used contract code reduces execution overhead.</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Gas Optimization</h5>
+                                    <p>Dynamic gas pricing with base fee adjustment based on network load.</p>
+                                </div>
+                            </div>
+
+                            <div class="code-example">
+                                <h5>Example Smart Contract Deployment</h5>
+                                <pre><code>
+// Sample deployment configuration
+{
+    chainId: 1013,
+    gasLimit: 8000000,
+    baseFeePerGas: 0.000000001 GNF,
+    maxPriorityFeePerGas: 0.000000002 GNF
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Network Layer Card -->
+                    <div class="layer-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="layer-header">
+                            <svg class="layer-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                                <path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.1 2.1m9.9 9.9l2.1 2.1M4.9 19.1l2.1-2.1m9.9-9.9l2.1-2.1" 
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <h3>Network Layer</h3>
+                        </div>
+                        <div class="layer-content">
+                            <h4>Advanced P2P Architecture</h4>
+                            <p>Our network layer implements a modified libp2p protocol with several enhancements:</p>
+                            
+                            <div class="network-metrics">
+                                <div class="metric-card">
+                                    <h5>Node Discovery</h5>
+                                    <ul>
+                                        <li>Kademlia DHT-based peer discovery</li>
+                                        <li>Geographic node distribution</li>
+                                        <li>Automatic peer scoring system</li>
+                                    </ul>
+                                </div>
+                                <div class="metric-card">
+                                    <h5>Network Performance</h5>
+                                    <ul>
+                                        <li>Average latency: <50ms</li>
+                                        <li>Network throughput: 10Gbps</li>
+                                        <li>Max peers per node: 100</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="network-topology">
+                                <svg viewBox="0 0 800 400" class="topology-diagram">
+                                    <!-- Central Node -->
+                                    <circle cx="400" cy="200" r="30" fill="#4299e1"/>
+                                    <text x="400" y="205" text-anchor="middle" fill="white">Core</text>
+                                    
+                                    <!-- Surrounding Nodes -->
+                                    <g class="validator-nodes">
+                                        <!-- Node 1 -->
+                                        <circle cx="250" cy="150" r="20" fill="#48bb78"/>
+                                        <text x="250" y="155" text-anchor="middle" fill="white">V1</text>
+                                        <line x1="280" y1="160" x2="370" y2="190" stroke="#2a4365" stroke-width="2"/>
+                                        
+                                        <!-- Node 2 -->
+                                        <circle cx="550" cy="150" r="20" fill="#48bb78"/>
+                                        <text x="550" y="155" text-anchor="middle" fill="white">V2</text>
+                                        <line x1="520" y1="160" x2="430" y2="190" stroke="#2a4365" stroke-width="2"/>
+                                        
+                                        <!-- Node 3 -->
+                                        <circle cx="250" cy="250" r="20" fill="#48bb78"/>
+                                        <text x="250" y="255" text-anchor="middle" fill="white">V3</text>
+                                        <line x1="280" y1="240" x2="370" y2="210" stroke="#2a4365" stroke-width="2"/>
+                                        
+                                        <!-- Node 4 -->
+                                        <circle cx="550" cy="250" r="20" fill="#48bb78"/>
+                                        <text x="550" y="255" text-anchor="middle" fill="white">V4</text>
+                                        <line x1="520" y1="240" x2="430" y2="210" stroke="#2a4365" stroke-width="2"/>
+                                    </g>
+                                    
+                                    <!-- Peer Connections -->
+                                    <g class="peer-connections" stroke="#2a4365" stroke-width="1" stroke-dasharray="4">
+                                        <path d="M250,150 L550,150"/>
+                                        <path d="M250,250 L550,250"/>
+                                        <path d="M250,150 L250,250"/>
+                                        <path d="M550,150 L550,250"/>
+                                    </g>
+                                </svg>
+                                <p class="diagram-caption">Figure 3: Global Network P2P Topology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="performance-metrics" data-aos="fade-up">
+                <h2>Performance Benchmarks</h2>
+                <div class="metrics-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+                <div class="metrics-table">
+                    <h2>Technical Specifications</h2>
+                    <table class="specs-table">
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>Chain ID</td>
+                            <td>1013</td>
+                        </tr>
+                        <tr>
+                            <td>Block Time</td>
+                            <td>3 seconds</td>
+                        </tr>
+                        <tr>
+                            <td>Block Size</td>
+                            <td>8 MB</td>
+                        </tr>
+                        <tr>
+                            <td>Transaction Throughput</td>
+                            <td>4000+ TPS</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        // Load sidebar
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+    </script>
+    <script src="js/architecture.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

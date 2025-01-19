@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Network Blockchain - Whitepaper</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+</head>
+<body>
+    <!-- Include sidebar -->
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+        <header class="hero">
+            <div id="particles-js" class="particles-container"></div>
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-logo">
+                    <svg class="network-icon" viewBox="0 0 48 48" width="80" height="80">
+                        <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.1)"/>
+                        <path d="M24 4v40M4 24h40" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="8" fill="white"/>
+                    </svg>
+                </div>
+                <h1>Global Network Blockchain</h1>
+                <h2>The Next Generation EVM-Compatible Network</h2>
+                <p class="hero-description">
+                    Building the future of decentralized infrastructure with 
+                    high performance, security, and interoperability
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                        <span class="stat-value counter" style="color: white;">4000</span>
+
+                        <span class="stat-label">TPS</span>
+                        <div class="stat-progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                        <span class="stat-value" style="color: white;">$0.001</span>
+                        <span class="stat-label">Avg Gas Fee</span>
+                        <div class="stat-progress">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                        <span class="stat-value" style="color: white;" >3s</span>
+                        <span class="stat-label">Block Time</span>
+                        <div class="stat-progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="smart-contracts.html" class="cta-button primary" data-aos="fade-up" data-aos-delay="400">
+                        Start Building
+                        <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="architecture.html" class="cta-button secondary" data-aos="fade-up" data-aos-delay="500">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="intro" data-aos="fade-up">
+            <h2>Executive Summary</h2>
+            <p>Global Network is a revolutionary EVM-compatible blockchain platform designed for high performance, low gas fees, and seamless interoperability. With Chain ID 1013 and the native GNF token, we're building the future of decentralized applications.</p>
+            <div class="cta-buttons">
+                <a href="architecture.html" class="cta-primary">Explore Technology</a>
+                <a href="developer.html" class="cta-secondary">Start Building</a>
+            </div>
+        </section>
+
+        <section class="key-features">
+            <h2 data-aos="fade-up">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <!-- EVM Icon -->
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+                            <path d="M12 1.75l-6 3.5v6.5l6 3.5 6-3.5v-6.5l-6-3.5zM12 3l4.5 2.625v5.25L12 13.5l-4.5-2.625v-5.25L12 3z"/>
+                            <path d="M12 14.75l-6 3.5v-6.5l6 3.5 6-3.5v6.5l-6-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>EVM Compatibility</h3>
+                    <p>Full support for Ethereum Virtual Machine with enhanced performance optimizations</p>
+                    <ul class="feature-list">
+                        <li>Solidity Support</li>
+                        <li>Web3.js Integration</li>
+                        <li>Tool Compatibility</li>
+                    </ul>
+                </div>
+
+                <div class="feature" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <!-- Gas Fee Icon -->
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            <path d="M11 7h2v7h-2zm0 8h2v2h-2z"/>
+                        </svg>
+                    </div>
+                    <h3>Low Gas Fees</h3>
+                    <p>Industry-leading low transaction costs with optimized execution</p>
+                    <ul class="feature-list">
+                        <li>$0.001 Average Fee</li>
+                        <li>Dynamic Fee Adjustment</li>
+                        <li>Gas Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="feature" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <!-- Interoperability Icon -->
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+                            <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                        </svg>
+                    </div>
+                    <h3>Interoperability</h3>
+                    <p>Seamless cross-chain communication and asset transfers</p>
+                    <ul class="feature-list">
+                        <li>Cross-Chain Bridges</li>
+                        <li>Multi-Chain Support</li>
+                        <li>Asset Portability</li>
+                    </ul>
+                </div>
+
+                <div class="feature" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <!-- PoW Icon -->
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+                            <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+                        </svg>
+                    </div>
+                    <h3>PoW Consensus</h3>
+                    <p>Secure and proven consensus mechanism</p>
+                    <ul class="feature-list">
+                        <li>Energy Efficient</li>
+                        <li>ASIC Resistant</li>
+                        <li>Fast Finality</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="ecosystem" data-aos="fade-up">
+            <h2>Thriving Ecosystem</h2>
+            <div class="ecosystem-grid">
+                <div class="ecosystem-card">
+                    <h3>DeFi</h3>
+                    <p>Build decentralized financial applications with minimal fees</p>
+                </div>
+                <div class="ecosystem-card">
+                    <h3>NFTs</h3>
+                    <p>Create and trade digital assets efficiently</p>
+                </div>
+                <div class="ecosystem-card">
+                    <h3>GameFi</h3>
+                    <p>Develop blockchain games with high performance</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics" data-aos="fade-up">
+            <h2>Network Metrics</h2>
+            <div class="metrics-container">
+                <canvas id="metricsChart"></canvas>
+            </div>
+            <div class="realtime-stats">
+                <div class="stat-box">
+                    <h4>Active Validators</h4>
+                    <div class="validator-count">
+                        <span class="stat-value" id="validatorCount">0</span>
+                        <span class="stat-trend">+2.5%</span>
+                    </div>
+                    <p class="stat-description">Active network validators securing the blockchain</p>
+                </div>
+                <div class="stat-box">
+                    <h4>Total Transactions</h4>
+                    <div class="validator-count">
+                        <span class="stat-value" id="transactionCount">0</span>
+                        <span class="stat-trend positive">+5.3%</span>
+                    </div>
+                    <p class="stat-description">Processed transactions in last 24 hours</p>
+                </div>
+                <div class="stat-box">
+                    <h4>Network Uptime</h4>
+                    <div class="validator-count">
+                        <span class="stat-value" id="uptimeValue">99.99</span>
+                        <span class="stat-unit">%</span>
+                    </div>
+                    <p class="stat-description">Network reliability score</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add new scripts before existing ones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#ffffff' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2
+                }
+            }
+        });
+    </script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        // Load sidebar
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-placeholder').innerHTML = data;
+            });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
